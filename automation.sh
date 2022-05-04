@@ -1,7 +1,7 @@
 #!/bin/bash
 
 name="ananthapadmanabha"
-s3_bucket="upgrade-ananthapadmanabha"
+s3_bucket="upgrad-ananthapadmanabha"
 
 apt update -y
 
@@ -10,7 +10,7 @@ then
     apt install apache2 -y
 fi
 
-running=$(systemctl status apache2 | grep active | awk '{print $3}' | tr -d'()')
+running=$(systemctl status apache2 | grep active | awk '{print $3}' | tr -d '()')
 if [[ running != ${running} ]];
 then
      systemctl start apache2
@@ -30,7 +30,7 @@ fi
 docroot="/var/www/html"
 if [ ! -f ${docroot}/inventory.html ];
 then
-    echo -e 'Log Type\t-\tTime Created\t-\tType\t-\tSize' >{doc}/inventory.html
+    echo -e 'Log Type\t-\tTime Created\t-\tType\t-\tSize' > {doc}/inventory.html
 fi
 if [[ -f ${docroot}/inventory.html ]];
 then
